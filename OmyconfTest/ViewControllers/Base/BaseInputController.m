@@ -40,7 +40,8 @@
 
 - (void)createGestures
 {
-    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScrollView)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapScrollView)];
+    tap.cancelsTouchesInView = NO;
     [scrollView addGestureRecognizer:tap];
 }
 
