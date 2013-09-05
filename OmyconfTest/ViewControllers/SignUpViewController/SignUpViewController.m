@@ -8,6 +8,11 @@
 
 #import "SignUpViewController.h"
 
+#define EMAIL           0
+#define PASSWORD        1
+#define FIRST_NAME      2
+#define LAST_NAME       3
+
 @interface SignUpViewController ()
 
 @property (strong, nonatomic) IBOutlet UIButton *btnSignUp;
@@ -61,56 +66,45 @@
 {
     NSString* regEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-    return [test evaluateWithObject:[textFields[0] text]];
+    return [test evaluateWithObject:[textFields[EMAIL] text]];
 }
 
 - (BOOL)checkPassword
 {
     NSString* regEx = @"[A-Z0-9a-z!@#$%^&*()-=_+]{6,12}";
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-    return [test evaluateWithObject:[textFields[1] text]];
+    return [test evaluateWithObject:[textFields[PASSWORD] text]];
 }
 
 - (BOOL)checkName:(NSString *)name
 {
     NSString* regEx = @"[А-Яа-я-]{1,255}";
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-    BOOL a = [test evaluateWithObject:name];
-    return a;
+    return [test evaluateWithObject:name];
 }
 
-- (void)showError:(NSString *)errorText
-{
-    [[[UIAlertView alloc] initWithTitle:@"Error"
-                                message:errorText
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
-}
 
 - (BOOL)inputValidation
 {
-    if([self checkEmail])
+    if([Validator checkEmail:[textFields[EMAIL] text]])
     {
-        if([self checkPassword])
+        if([Validator checkPassword:[textFields[PASSWORD] text]])
         {
-            if([self checkName:[textFields[2] text]])
+            if([Validator checkName:[textFields[FIRST_NAME] text]])
             {
-                if([self checkName:[textFields[3] text]])
-                {
+                if([Validator checkName:[textFields[LAST_NAME] text]])
                     return YES;
-                }
                 else
-                    [self showError:@"Incorrect last name. Please use cyrillic characters."];
+                    [Validator showError:LAST_NAME_ERROR];
             }
             else
-                [self showError:@"Incorrect first name. Please use cyrillic characters."];
+                [Validator showError:FIRST_NAME_ERROR];
         }
         else
-            [self showError:@"Password must contain 6-12 latin characters, numbers or symbols !@#$%^&*()-=_+."];
+            [Validator showError:PASSWORD_ERROR];
     }
     else
-        [self showError:@"Incorrect email address. Please try again."];
+        [Validator showError:EMAIL_ERROR];
 
     return NO;
 }
@@ -124,10 +118,10 @@
         NSString *stringURL = [NSString stringWithFormat:@"%@%@?first_name=%@&last_name=%@&email=%@&password=%@",
                                BASE_URL,
                                USER_CREATE_URL,
-                               [[textFields[2] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                               [[textFields[3] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                               [[textFields[0] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                               [[textFields[1] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                               [[textFields[FIRST_NAME] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                               [[textFields[LAST_NAME] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                               [[textFields[EMAIL] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                               [[textFields[PASSWORD] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
         [self.internetProvider requestWithURL:stringURL];
     }

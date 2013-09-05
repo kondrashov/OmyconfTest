@@ -25,6 +25,7 @@
 		86F00A2E17D79F7A00EA4C38 /* BaseInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F00A2D17D79F7A00EA4C38 /* BaseInputController.m */; };
 		86F00A3117D84EF700EA4C38 /* BaseInternetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F00A3017D84EF700EA4C38 /* BaseInternetController.m */; };
 		86F00A3517D8500900EA4C38 /* InternetProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F00A3417D8500900EA4C38 /* InternetProvider.m */; };
+		86F00A7017D8980900EA4C38 /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F00A6F17D8980900EA4C38 /* Validator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,8 @@
 		86F00A3317D8500900EA4C38 /* InternetProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternetProvider.h; path = Internet/InternetProvider.h; sourceTree = "<group>"; };
 		86F00A3417D8500900EA4C38 /* InternetProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternetProvider.m; path = Internet/InternetProvider.m; sourceTree = "<group>"; };
 		86F00A3717D8540400EA4C38 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Global/Constants.h; sourceTree = "<group>"; };
+		86F00A6E17D8980900EA4C38 /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Validator.h; path = Global/Validator.h; sourceTree = "<group>"; };
+		86F00A6F17D8980900EA4C38 /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Validator.m; path = Global/Validator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				86F00A3717D8540400EA4C38 /* Constants.h */,
+				86F00A6E17D8980900EA4C38 /* Validator.h */,
+				86F00A6F17D8980900EA4C38 /* Validator.m */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				86F00A2E17D79F7A00EA4C38 /* BaseInputController.m in Sources */,
 				86F00A3117D84EF700EA4C38 /* BaseInternetController.m in Sources */,
 				86F00A3517D8500900EA4C38 /* InternetProvider.m in Sources */,
+				86F00A7017D8980900EA4C38 /* Validator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +402,7 @@
 				86F00A0E17D784FF00EA4C38 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

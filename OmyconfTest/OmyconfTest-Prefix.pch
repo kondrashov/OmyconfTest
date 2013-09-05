@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #import "UIView+Helpers.h"
     #import "Constants.h"
+    #import "Validator.h"
 #endif

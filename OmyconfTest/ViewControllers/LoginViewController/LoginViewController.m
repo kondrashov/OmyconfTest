@@ -8,6 +8,9 @@
 
 #import "LoginViewController.h"
 
+#define EMAIL       0
+#define PASSWORD    1
+
 @interface LoginViewController ()
 
 @property (strong, nonatomic) IBOutlet UIButton *btnSignUp;
@@ -55,8 +58,6 @@
 
 #pragma mark - TextField delegate
 
-#pragma mark - TextField delegate
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if(textField.tag < 2)
@@ -67,15 +68,37 @@
     return YES;
 }
 
+#pragma mark - Private methods
+
+- (BOOL)inputValidation
+{
+    if([Validator checkEmail:[textFields[EMAIL] text]])
+    {
+        if([Validator checkPassword:[textFields[PASSWORD] text]])
+            return YES;
+        else
+            [Validator showError:PASSWORD_ERROR];
+    }
+    else
+        [Validator showError:EMAIL_ERROR];
+    
+    return NO;
+}
+
 #pragma mark - Actions
 
 - (IBAction)onLogin:(id)sender
 {
-    [[[UIAlertView alloc] initWithTitle:nil
-                                message:@"Coming soon..."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    if([self inputValidation])
+    {
+        NSString *stringURL = [NSString stringWithFormat:@"%@%@?email=%@&password=%@",
+                               BASE_URL,
+                               USER_AUTH,
+                               [[textFields[EMAIL] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                               [[textFields[PASSWORD] text] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        
+        [self.internetProvider requestWithURL:stringURL];
+    }
 }
 
 - (IBAction)onSignUp:(id)sender
@@ -83,5 +106,23 @@
     SignUpViewController *signUpVC = [[SignUpViewController alloc] init];
     [self.navigationController pushViewController:signUpVC animated:YES];
 }
+
+#pragma mark - InternetProvider Delegate
+
+- (void)connectionDidFinishLoading:(NSData *)responseData
+{
+    NSString *dataString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", dataString);
+    
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData
+                                                             options:NSJSONReadingMutableContainers
+                                                               error:nil];
+    [[[UIAlertView alloc] initWithTitle:nil
+                                message:[jsonDict objectForKey:@"message"]
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
 
 @end

@@ -8,3 +8,4 @@
 
 #define BASE_URL            @"http://testapi.rogotest.ru/"
 #define USER_CREATE_URL     @"user/create"
+#define USER_AUTH           @"user/auth"
