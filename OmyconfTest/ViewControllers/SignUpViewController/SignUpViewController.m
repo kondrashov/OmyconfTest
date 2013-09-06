@@ -14,10 +14,12 @@
 #define LAST_NAME       3
 
 @interface SignUpViewController ()
+{
+    BOOL signUpSuccess;
+}
 
 @property (strong, nonatomic) IBOutlet UIButton *btnSignUp;
 @property (strong, nonatomic) IBOutlet UILabel *lblEmail;
-
 
 @end
 
@@ -55,7 +57,10 @@
     if(textField.tag < 4)
         [textFields[textField.tag] becomeFirstResponder];
     else
+    {
         [textField resignFirstResponder];
+        [self onSignUp:nil];
+    }
     
     return YES;
 }
@@ -82,7 +87,6 @@
     NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
     return [test evaluateWithObject:name];
 }
-
 
 - (BOOL)inputValidation
 {
@@ -137,11 +141,28 @@
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData
                                                              options:NSJSONReadingMutableContainers
                                                                error:nil];
+
+    if([[jsonDict objectForKey:@"error"] integerValue] == 0)
+        signUpSuccess = YES;
+    else
+        signUpSuccess = NO;
+
     [[[UIAlertView alloc] initWithTitle:nil
                                 message:[jsonDict objectForKey:@"message"]
-                               delegate:nil
+                               delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
+}
+
+#pragma mark - AlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(signUpSuccess)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SignUpDidFinishedNotification object:[textFields[EMAIL] text]];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

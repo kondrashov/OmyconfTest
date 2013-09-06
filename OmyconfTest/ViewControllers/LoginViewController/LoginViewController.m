@@ -12,6 +12,9 @@
 #define PASSWORD    1
 
 @interface LoginViewController ()
+{
+    BOOL loginSuccess;
+}
 
 @property (strong, nonatomic) IBOutlet UIButton *btnSignUp;
 
@@ -63,7 +66,10 @@
     if(textField.tag < 2)
         [textFields[textField.tag] becomeFirstResponder];
     else
+    {
         [textField resignFirstResponder];
+        [self onLogin:nil];
+    }
     
     return YES;
 }
@@ -83,6 +89,25 @@
         [Validator showError:EMAIL_ERROR];
     
     return NO;
+}
+
+- (void)createObservers
+{
+    [super createObservers];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(signUpDidFinished:)
+                                                 name:SignUpDidFinishedNotification
+                                               object:nil];
+}
+
+#pragma mark - Notifications
+
+- (void)signUpDidFinished:(NSNotification *)note
+{
+    [(UITextField *)textFields[EMAIL] setText:note.object];
+    [(UITextField *)textFields[PASSWORD] setText:@""];
+    [textFields[PASSWORD] becomeFirstResponder];
 }
 
 #pragma mark - Actions
@@ -117,12 +142,27 @@
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData
                                                              options:NSJSONReadingMutableContainers
                                                                error:nil];
+    
+    if([[jsonDict objectForKey:@"error"] integerValue] == 0)
+        loginSuccess = YES;
+    else
+        loginSuccess = NO;
+
     [[[UIAlertView alloc] initWithTitle:nil
                                 message:[jsonDict objectForKey:@"message"]
-                               delegate:nil
+                               delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
 }
 
+#pragma mark - AlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(loginSuccess)
+    {
+
+    }
+}
 
 @end

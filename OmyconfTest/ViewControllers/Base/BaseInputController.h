@@ -15,4 +15,7 @@
     IBOutletCollection(UITextField) NSArray *textFields;
 }
 
+- (void)createGestures;
+- (void)createObservers;
+
 @end
