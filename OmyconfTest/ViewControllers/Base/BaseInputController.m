@@ -23,7 +23,7 @@
 {
     [super viewDidLoad];
     [self createGestures];
-    [self createObservers];    
+    [self createObservers];
 }
 
 - (void)dealloc

@@ -13,6 +13,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblMessage;
 
 + (CGFloat)cellHeightWithText:(NSString *)text;
-- (void)updateCellWithText:(NSString *)text;
+- (void)updateCellWithText:(NSString *)text userId:(NSString *)userId;
 
 @end

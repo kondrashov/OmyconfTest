@@ -54,6 +54,12 @@
     [tableView reloadData];
 }
 
+- (void)saveData:(id)data
+{
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:UserListKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)loadData
 {
     NSString *userEmail = [[NSUserDefaults standardUserDefaults] objectForKey:UserEmailKey];
@@ -118,6 +124,8 @@
     if([[jsonDict objectForKey:@"error"] integerValue] == 0)
     {
         NSDictionary *data = [jsonDict objectForKey:@"data"];
+        [self saveData:data];
+
         NSArray *dataKeys = [[data allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2)
         {
             if ([obj1 integerValue] > [obj2 integerValue])
@@ -137,7 +145,7 @@
         for(int i = 0; i < dataKeys.count; i++)
         {
             NSMutableDictionary *dataDict = [data objectForKey:dataKeys[i]];
-//            [dataDict setObject:dataKeys[i] forKey:@"id"];
+            [dataDict setObject:dataKeys[i] forKey:@"id"];
             [self.dataArray addObject:dataDict];
         }
 

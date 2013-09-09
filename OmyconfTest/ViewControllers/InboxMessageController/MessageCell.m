@@ -9,15 +9,20 @@
 #import "MessageCell.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define TEXT_FONT           [UIFont systemFontOfSize:15];
-#define LABEL_FRAME         LABEL_INSET, LABEL_INSET, CELL_WIDTH - LABEL_INSET * 2, CELL_HEIGHT - LABEL_INSET * 2
-#define CELL_WIDTH          320
-#define CELL_HEIGHT         44
-#define LABEL_INSET         20
+#define TEXT_FONT               [UIFont systemFontOfSize:15];
+#define CAPTION_FONT            [UIFont boldSystemFontOfSize:12];
+#define LABEL_FRAME             LABEL_INSET, LABEL_TOP_INSET, CELL_WIDTH - LABEL_INSET * 2, CELL_HEIGHT - LABEL_INSET * 2
+#define CELL_WIDTH              320
+#define CELL_HEIGHT             44
+#define LABEL_INSET             20
+#define LABEL_TOP_INSET         30
+#define BACKG_IMG_TOP_INSET     20
+#define BACKG_IMG_INSET         10
 
 @implementation MessageCell
 {
     UIImageView *msgImgView;
+    UILabel *lblUserName;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -28,6 +33,7 @@
         UIImage *img = [[UIImage imageNamed:@"msgImg"] safeResizableImageWithCapInsets:UIEdgeInsetsMake(8, 8, 8, 8)
                                                                           resizingMode:UIImageResizingModeStretch];
         msgImgView = [[UIImageView alloc] initWithImage:img];
+        lblUserName = [UILabel new];
     }
     return self;
 }
@@ -40,19 +46,27 @@
     lblText.numberOfLines = 0;
     [lblText sizeToFit];
 
-    return lblText.height + LABEL_INSET * 2;
+    return lblText.height + LABEL_TOP_INSET + LABEL_INSET;
 }
 
-- (void)updateCellWithText:(NSString *)text
+- (void)updateCellWithText:(NSString *)text userId:(NSString *)userId
 {
     if(msgImgView.superview != self.contentView)
        [self.contentView insertSubview:msgImgView belowSubview:self.lblMessage];
     
+    if(lblUserName.superview != self.contentView)
+        [self.contentView addSubview:lblUserName];
+        
     self.lblMessage.frame = CGRectMake(LABEL_FRAME);
     self.lblMessage.font = TEXT_FONT;
     self.lblMessage.text = text;
     [self.lblMessage sizeToFit];
-    msgImgView.frame = CGRectMake(LABEL_INSET / 2, LABEL_INSET / 2, CELL_WIDTH - LABEL_INSET, self.lblMessage.height + LABEL_INSET);
+    msgImgView.frame = CGRectMake(BACKG_IMG_INSET, BACKG_IMG_TOP_INSET, CELL_WIDTH - BACKG_IMG_INSET * 2, self.lblMessage.height + BACKG_IMG_INSET * 2);
+    
+    lblUserName.font = CAPTION_FONT;
+    lblUserName.text = [NSString stringWithFormat:@"%@", userId];
+    [lblUserName sizeToFit];
+    lblUserName.frame = CGRectMake(LABEL_INSET, 2, lblUserName.width, lblUserName.height);
 }
 
 

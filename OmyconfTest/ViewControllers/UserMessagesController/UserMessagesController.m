@@ -8,6 +8,7 @@
 
 #import "UserMessagesController.h"
 #import "InboxMessageController.h"
+#import "OutboxMessageController.h"
 
 #define USER_MESSAGES_CELL_ID    @"UserMessagesCell"
 
@@ -98,8 +99,11 @@
         break;
             
         case 1: // Outbox messages
-            
-            break;
+        {
+            OutboxMessageController *outboxMessageController = [[OutboxMessageController alloc] initWithUserId:self.userId];
+            [self.navigationController pushViewController:outboxMessageController animated:YES];
+        }
+        break;
 
         case 2: // New message
             

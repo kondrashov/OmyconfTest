@@ -12,9 +12,6 @@
 #define MESSAGE_CELL_ID     @"MessageCell"
 
 @interface InboxMessageController ()
-{
-    NSString *userId;
-}
 
 @end
 
@@ -28,7 +25,7 @@
     if (self)
     {
         userId = userIdentifier;
-        self.title = @"Входящие сообщения";
+        self.title = @"Входящие";
     }
     return self;
 }
@@ -48,7 +45,12 @@
 - (void)loadingDataFinished
 {
     lblNoData.text = @"От этого пользователя нет входящих сообщений";
-    [self filteringMessageBySender];
+    [self filteringMessageByKey:@"sender"];
+}
+
+- (void)saveData:(id)data
+{
+    
 }
 
 - (void)configureTable
@@ -58,14 +60,14 @@
 
 #pragma mark - Private methods
 
-- (void)filteringMessageBySender
+- (void)filteringMessageByKey:(NSString *)key
 {
     NSArray *tempArray = [NSArray arrayWithArray:self.dataArray];
     [self.dataArray removeAllObjects];
     
     for(NSDictionary *dict in tempArray)
     {
-        if([[dict objectForKey:@"sender"] integerValue] == [userId integerValue])
+        if([[dict objectForKey:key] integerValue] == [userId integerValue])
             [self.dataArray addObject:dict];
     }
 }
@@ -78,7 +80,7 @@
                                                         forTableView:tableView
                                                           withCellId:MESSAGE_CELL_ID];
 
-    [messageCell updateCellWithText:[self.dataArray[indexPath.row] objectForKey:@"text"]];
+    [messageCell updateCellWithText:[self.dataArray[indexPath.row] objectForKey:@"text"] userId:[Helpers getUserNameById:userId]];
     return messageCell;
 }
 

@@ -40,10 +40,6 @@
 {
     [super viewDidLoad];
     scrollView.contentSize = CGSizeMake(self.view.width, self.btnSignUp.y + self.btnSignUp.height);
-    
-#warning !!!! REMOVE BEFORE RELEASE !!!!
-    [textFields[EMAIL] setText:@"user01@gmail.com"];
-    [textFields[PASSWORD] setText:@"123456"];
 }
 
 - (void)viewDidUnload

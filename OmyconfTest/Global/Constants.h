@@ -11,7 +11,9 @@
 #define USER_AUTH           @"user/auth"
 #define USER_LIST           @"user/list"
 #define MSG_LIST            @"msg/list"
+#define MSG_MY              @"msg/my"
 
 #define SignUpDidFinishedNotification   @"SignUpDidFinishedNotification"
 #define UserEmailKey                    @"UserEmail"
 #define UserPasswordKey                 @"UserPassword"
+#define UserListKey                     @"UserList"

@@ -20,6 +20,7 @@
 		86AE8B3217DE20F700F217AF /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8B3117DE20F700F217AF /* UIImage+Helpers.m */; };
 		86AE8B3517DE216200F217AF /* msgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AE8B3317DE216200F217AF /* msgImg.png */; };
 		86AE8B3617DE216200F217AF /* msgImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AE8B3417DE216200F217AF /* msgImg@2x.png */; };
+		86AE8B3A17DE37CD00F217AF /* OutboxMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8B3917DE37CD00F217AF /* OutboxMessageController.m */; };
 		86E30C5017DA910F00EE3DBC /* logoNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E30C4E17DA910F00EE3DBC /* logoNew.png */; };
 		86E30C5117DA910F00EE3DBC /* logoNew@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E30C4F17DA910F00EE3DBC /* logoNew@2x.png */; };
 		86E30C5417DA92B600EE3DBC /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E30C5317DA92B600EE3DBC /* Helpers.m */; };
@@ -68,6 +69,8 @@
 		86AE8B3117DE20F700F217AF /* UIImage+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Helpers.m"; path = "Categories/UIImage+Helpers.m"; sourceTree = "<group>"; };
 		86AE8B3317DE216200F217AF /* msgImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgImg.png; sourceTree = "<group>"; };
 		86AE8B3417DE216200F217AF /* msgImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msgImg@2x.png"; sourceTree = "<group>"; };
+		86AE8B3817DE37CD00F217AF /* OutboxMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutboxMessageController.h; path = ViewControllers/OutboxMessageController/OutboxMessageController.h; sourceTree = "<group>"; };
+		86AE8B3917DE37CD00F217AF /* OutboxMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutboxMessageController.m; path = ViewControllers/OutboxMessageController/OutboxMessageController.m; sourceTree = "<group>"; };
 		86E30C4E17DA910F00EE3DBC /* logoNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoNew.png; path = Images/logoNew.png; sourceTree = "<group>"; };
 		86E30C4F17DA910F00EE3DBC /* logoNew@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logoNew@2x.png"; path = "Images/logoNew@2x.png"; sourceTree = "<group>"; };
 		86E30C5217DA92B600EE3DBC /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helpers.h; path = Global/Helpers.h; sourceTree = "<group>"; };
@@ -170,6 +173,15 @@
 			name = InboxMessageController;
 			sourceTree = "<group>";
 		};
+		86AE8B3717DE37A100F217AF /* OutboxMessageController */ = {
+			isa = PBXGroup;
+			children = (
+				86AE8B3817DE37CD00F217AF /* OutboxMessageController.h */,
+				86AE8B3917DE37CD00F217AF /* OutboxMessageController.m */,
+			);
+			name = OutboxMessageController;
+			sourceTree = "<group>";
+		};
 		86E30C5B17DA9B6300EE3DBC /* UserListViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +275,7 @@
 				86E30C5B17DA9B6300EE3DBC /* UserListViewController */,
 				8682020017DDC9AA00D76D96 /* UserMessagesController */,
 				8682020A17DDE0AA00D76D96 /* InboxMessageController */,
+				86AE8B3717DE37A100F217AF /* OutboxMessageController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -431,6 +444,7 @@
 				8682020E17DDE10300D76D96 /* InboxMessageController.m in Sources */,
 				86AE8B2A17DE01ED00F217AF /* MessageCell.m in Sources */,
 				86AE8B3217DE20F700F217AF /* UIImage+Helpers.m in Sources */,
+				86AE8B3A17DE37CD00F217AF /* OutboxMessageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

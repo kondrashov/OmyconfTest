@@ -9,7 +9,11 @@
 #import "UserListViewController.h"
 
 @interface InboxMessageController : UserListViewController
+{
+    NSString *userId;
+}
 
 - (id)initWithUserId:(NSString *)userIdentifier;
+- (void)filteringMessageByKey:(NSString *)key;
 
 @end

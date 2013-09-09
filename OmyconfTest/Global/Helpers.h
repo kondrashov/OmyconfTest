@@ -15,4 +15,6 @@
 
 @interface Helpers : NSObject
 
++ (NSString *)getUserNameById:(NSString *)userId;
+
 @end
