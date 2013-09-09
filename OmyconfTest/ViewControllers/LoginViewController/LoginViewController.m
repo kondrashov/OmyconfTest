@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "UserListViewController.h"
 
 #define EMAIL       0
 #define PASSWORD    1
@@ -39,6 +40,10 @@
 {
     [super viewDidLoad];
     scrollView.contentSize = CGSizeMake(self.view.width, self.btnSignUp.y + self.btnSignUp.height);
+    
+#warning !!!! REMOVE BEFORE RELEASE !!!!
+    [textFields[EMAIL] setText:@"user01@gmail.com"];
+    [textFields[PASSWORD] setText:@"123456"];
 }
 
 - (void)viewDidUnload
@@ -57,6 +62,11 @@
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillDisappear:animated];
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - TextField delegate
@@ -136,6 +146,8 @@
 
 - (void)connectionDidFinishLoading:(NSData *)responseData
 {
+    [super connectionDidFinishLoading:responseData];
+    
     NSString *dataString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     NSLog(@"%@", dataString);
     
@@ -161,7 +173,12 @@
 {
     if(loginSuccess)
     {
-
+        [[NSUserDefaults standardUserDefaults] setObject:[textFields[EMAIL] text] forKey:UserEmailKey];
+        [[NSUserDefaults standardUserDefaults] setObject:[textFields[PASSWORD] text] forKey:UserPasswordKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        UserListViewController *userListVC = [[UserListViewController alloc] init];
+        [self.navigationController pushViewController:userListVC animated:YES];
     }
 }
 

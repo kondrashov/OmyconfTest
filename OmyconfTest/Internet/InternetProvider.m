@@ -27,6 +27,9 @@
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:stringURL]];
     self.urlConnection = [NSURLConnection connectionWithRequest:request delegate:self];
+    
+    if ([self.delegate respondsToSelector:@selector(connectionDidReceiveResponse)])
+        [self.delegate connectionDidReceiveResponse];
 }
 
 #pragma mark - NSURLConnection Delegate

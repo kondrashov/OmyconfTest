@@ -32,7 +32,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        self.title = NSLocalizedString(@"Sign Up", nil);
+        self.title = NSLocalizedString(@"Регистрация", nil);
     }
     return self;
 }
@@ -66,27 +66,6 @@
 }
 
 #pragma mark - Private methods
-
-- (BOOL)checkEmail
-{
-    NSString* regEx = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-    NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-    return [test evaluateWithObject:[textFields[EMAIL] text]];
-}
-
-- (BOOL)checkPassword
-{
-    NSString* regEx = @"[A-Z0-9a-z!@#$%^&*()-=_+]{6,12}";
-    NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-    return [test evaluateWithObject:[textFields[PASSWORD] text]];
-}
-
-- (BOOL)checkName:(NSString *)name
-{
-    NSString* regEx = @"[А-Яа-я-]{1,255}";
-    NSPredicate *test = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regEx];
-    return [test evaluateWithObject:name];
-}
 
 - (BOOL)inputValidation
 {
@@ -135,6 +114,8 @@
 
 - (void)connectionDidFinishLoading:(NSData *)responseData
 {
+   [super connectionDidFinishLoading:responseData];
+    
     NSString *dataString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
     NSLog(@"%@", dataString);
     

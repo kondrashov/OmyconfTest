@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-#define EMAIL_ERROR         @"Incorrect email address. Please try again."
-#define PASSWORD_ERROR      @"Password must contain 6-12 latin characters, numbers or symbols !@#$%^&*()-=_+."
-#define FIRST_NAME_ERROR    @"Incorrect first name. Please use cyrillic characters."
-#define LAST_NAME_ERROR     @"Incorrect last name. Please use cyrillic characters."
+#define EMAIL_ERROR         @"Некорректный формат электронной почты"
+#define PASSWORD_ERROR      @"Пароль должен содержать от 6 до 12 латинских букв, цифр или символов !@#$%^&*()-=_+."
+#define FIRST_NAME_ERROR    @"Некорректный формат имени. Пожалуйста, используйте кириллические буквы."
+#define LAST_NAME_ERROR     @"Некорректный формат фамилии. Пожалуйста, используйте кириллические буквы."
 
 @interface Validator : NSObject
 

@@ -3,6 +3,36 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[UserListViewController connectionDidFinishLoading:]:UserListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataKeys">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[InboxMessageController connectionDidFinishLoading:]:InboxMessageController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[InboxMessageController viewDidLoad]:InboxMessageController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UserMessagesController initWithUserName:userEmail:]:UserMessagesController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UserListViewController createCellWithIndexPath:]:UserListViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[BaseInputController viewDidLoad]:BaseInputController.m">
          <PersistentStrings>
             <PersistentString
@@ -12,6 +42,9 @@
                value = "bottomFrame">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UserListViewController tableView:didSelectRowAtIndexPath:]:UserListViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

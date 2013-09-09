@@ -13,5 +13,8 @@
     #import <Foundation/Foundation.h>
     #import "UIView+Helpers.h"
     #import "Constants.h"
+    #import "Helpers.h"
     #import "Validator.h"
+    #import "SVProgressHUD.h"
+    #import "UIImage+Helpers.h"
 #endif

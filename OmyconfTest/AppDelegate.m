@@ -18,8 +18,6 @@
     
     self.loginVC = [LoginViewController new];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:self.loginVC];
-
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];

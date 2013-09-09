@@ -7,6 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		868201F817DDC08100D76D96 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868201F717DDC08000D76D96 /* QuartzCore.framework */; };
+		868201FE17DDC10200D76D96 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 868201FB17DDC10200D76D96 /* SVProgressHUD.bundle */; };
+		868201FF17DDC10200D76D96 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 868201FD17DDC10200D76D96 /* SVProgressHUD.m */; };
+		8682020417DDCAD800D76D96 /* UserMessagesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8682020217DDCAD800D76D96 /* UserMessagesController.m */; };
+		8682020517DDCAD800D76D96 /* UserMessagesController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8682020317DDCAD800D76D96 /* UserMessagesController.xib */; };
+		8682020817DDCCF200D76D96 /* user_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8682020617DDCCF200D76D96 /* user_avatar.png */; };
+		8682020917DDCCF200D76D96 /* user_avatar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8682020717DDCCF200D76D96 /* user_avatar@2x.png */; };
+		8682020E17DDE10300D76D96 /* InboxMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8682020C17DDE10300D76D96 /* InboxMessageController.m */; };
+		86AE8B2A17DE01ED00F217AF /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8B2917DE01ED00F217AF /* MessageCell.m */; };
+		86AE8B2C17DE020100F217AF /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86AE8B2B17DE020100F217AF /* MessageCell.xib */; };
+		86AE8B3217DE20F700F217AF /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8B3117DE20F700F217AF /* UIImage+Helpers.m */; };
+		86AE8B3517DE216200F217AF /* msgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AE8B3317DE216200F217AF /* msgImg.png */; };
+		86AE8B3617DE216200F217AF /* msgImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AE8B3417DE216200F217AF /* msgImg@2x.png */; };
+		86E30C5017DA910F00EE3DBC /* logoNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E30C4E17DA910F00EE3DBC /* logoNew.png */; };
+		86E30C5117DA910F00EE3DBC /* logoNew@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E30C4F17DA910F00EE3DBC /* logoNew@2x.png */; };
+		86E30C5417DA92B600EE3DBC /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E30C5317DA92B600EE3DBC /* Helpers.m */; };
+		86E30C5717DA964500EE3DBC /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E30C5617DA964500EE3DBC /* BaseNavigationController.m */; };
+		86E30C5A17DA9B2600EE3DBC /* BaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E30C5917DA9B2600EE3DBC /* BaseTableController.m */; };
+		86E30C5F17DA9BA300EE3DBC /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E30C5D17DA9BA300EE3DBC /* UserListViewController.m */; };
+		86E30C6017DA9BA300EE3DBC /* UserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86E30C5E17DA9BA300EE3DBC /* UserListViewController.xib */; };
+		86E30C6317DAA11900EE3DBC /* UserListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E30C6217DAA11900EE3DBC /* UserListCell.m */; };
+		86E30C6717DAA15B00EE3DBC /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86E30C6617DAA15B00EE3DBC /* UserListCell.xib */; };
 		86F009ED17D784FE00EA4C38 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F009EC17D784FE00EA4C38 /* UIKit.framework */; };
 		86F009EF17D784FE00EA4C38 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F009EE17D784FE00EA4C38 /* Foundation.framework */; };
 		86F009F117D784FE00EA4C38 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F009F017D784FE00EA4C38 /* CoreGraphics.framework */; };
@@ -16,7 +38,6 @@
 		86F009FF17D784FE00EA4C38 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 86F009FE17D784FE00EA4C38 /* Default.png */; };
 		86F00A0117D784FE00EA4C38 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86F00A0017D784FE00EA4C38 /* Default@2x.png */; };
 		86F00A0317D784FE00EA4C38 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86F00A0217D784FE00EA4C38 /* Default-568h@2x.png */; };
-		86F00A1117D7867C00EA4C38 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 86F00A1017D7867C00EA4C38 /* logo.png */; };
 		86F00A1F17D78A3400EA4C38 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F00A1D17D78A3400EA4C38 /* LoginViewController.m */; };
 		86F00A2017D78A3400EA4C38 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86F00A1E17D78A3400EA4C38 /* LoginViewController.xib */; };
 		86F00A2517D78A8A00EA4C38 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86F00A2317D78A8A00EA4C38 /* SignUpViewController.m */; };
@@ -29,6 +50,38 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		868201F717DDC08000D76D96 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		868201FB17DDC10200D76D96 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		868201FC17DDC10200D76D96 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		868201FD17DDC10200D76D96 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		8682020117DDCAD800D76D96 /* UserMessagesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserMessagesController.h; path = ViewControllers/UserMessagesController/UserMessagesController.h; sourceTree = "<group>"; };
+		8682020217DDCAD800D76D96 /* UserMessagesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserMessagesController.m; path = ViewControllers/UserMessagesController/UserMessagesController.m; sourceTree = "<group>"; };
+		8682020317DDCAD800D76D96 /* UserMessagesController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserMessagesController.xib; path = ViewControllers/UserMessagesController/UserMessagesController.xib; sourceTree = "<group>"; };
+		8682020617DDCCF200D76D96 /* user_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_avatar.png; path = Images/user_avatar.png; sourceTree = "<group>"; };
+		8682020717DDCCF200D76D96 /* user_avatar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user_avatar@2x.png"; path = "Images/user_avatar@2x.png"; sourceTree = "<group>"; };
+		8682020B17DDE10300D76D96 /* InboxMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InboxMessageController.h; path = ViewControllers/InboxMessageController/InboxMessageController.h; sourceTree = "<group>"; };
+		8682020C17DDE10300D76D96 /* InboxMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InboxMessageController.m; path = ViewControllers/InboxMessageController/InboxMessageController.m; sourceTree = "<group>"; };
+		86AE8B2817DE01ED00F217AF /* MessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageCell.h; path = ViewControllers/InboxMessageController/MessageCell.h; sourceTree = "<group>"; };
+		86AE8B2917DE01ED00F217AF /* MessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageCell.m; path = ViewControllers/InboxMessageController/MessageCell.m; sourceTree = "<group>"; };
+		86AE8B2B17DE020100F217AF /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MessageCell.xib; path = ViewControllers/InboxMessageController/MessageCell.xib; sourceTree = "<group>"; };
+		86AE8B3017DE20F700F217AF /* UIImage+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Helpers.h"; path = "Categories/UIImage+Helpers.h"; sourceTree = "<group>"; };
+		86AE8B3117DE20F700F217AF /* UIImage+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Helpers.m"; path = "Categories/UIImage+Helpers.m"; sourceTree = "<group>"; };
+		86AE8B3317DE216200F217AF /* msgImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgImg.png; sourceTree = "<group>"; };
+		86AE8B3417DE216200F217AF /* msgImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msgImg@2x.png"; sourceTree = "<group>"; };
+		86E30C4E17DA910F00EE3DBC /* logoNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoNew.png; path = Images/logoNew.png; sourceTree = "<group>"; };
+		86E30C4F17DA910F00EE3DBC /* logoNew@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logoNew@2x.png"; path = "Images/logoNew@2x.png"; sourceTree = "<group>"; };
+		86E30C5217DA92B600EE3DBC /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helpers.h; path = Global/Helpers.h; sourceTree = "<group>"; };
+		86E30C5317DA92B600EE3DBC /* Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helpers.m; path = Global/Helpers.m; sourceTree = "<group>"; };
+		86E30C5517DA964500EE3DBC /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseNavigationController.h; path = ViewControllers/Base/BaseNavigationController.h; sourceTree = "<group>"; };
+		86E30C5617DA964500EE3DBC /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseNavigationController.m; path = ViewControllers/Base/BaseNavigationController.m; sourceTree = "<group>"; };
+		86E30C5817DA9B2600EE3DBC /* BaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseTableController.h; path = ViewControllers/Base/BaseTableController.h; sourceTree = "<group>"; };
+		86E30C5917DA9B2600EE3DBC /* BaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseTableController.m; path = ViewControllers/Base/BaseTableController.m; sourceTree = "<group>"; };
+		86E30C5C17DA9BA300EE3DBC /* UserListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserListViewController.h; path = ViewControllers/UserListViewController/UserListViewController.h; sourceTree = "<group>"; };
+		86E30C5D17DA9BA300EE3DBC /* UserListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserListViewController.m; path = ViewControllers/UserListViewController/UserListViewController.m; sourceTree = "<group>"; };
+		86E30C5E17DA9BA300EE3DBC /* UserListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserListViewController.xib; path = ViewControllers/UserListViewController/UserListViewController.xib; sourceTree = "<group>"; };
+		86E30C6117DAA11900EE3DBC /* UserListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserListCell.h; path = ViewControllers/UserListViewController/UserListCell.h; sourceTree = "<group>"; };
+		86E30C6217DAA11900EE3DBC /* UserListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserListCell.m; path = ViewControllers/UserListViewController/UserListCell.m; sourceTree = "<group>"; };
+		86E30C6617DAA15B00EE3DBC /* UserListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserListCell.xib; path = ViewControllers/UserListViewController/UserListCell.xib; sourceTree = "<group>"; };
 		86F009E917D784FE00EA4C38 /* OmyconfTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmyconfTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86F009EC17D784FE00EA4C38 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		86F009EE17D784FE00EA4C38 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,7 +95,6 @@
 		86F009FE17D784FE00EA4C38 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		86F00A0017D784FE00EA4C38 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		86F00A0217D784FE00EA4C38 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		86F00A1017D7867C00EA4C38 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		86F00A1C17D78A3400EA4C38 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewControllers/LoginViewController/LoginViewController.h; sourceTree = "<group>"; };
 		86F00A1D17D78A3400EA4C38 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewControllers/LoginViewController/LoginViewController.m; sourceTree = "<group>"; };
 		86F00A1E17D78A3400EA4C38 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ViewControllers/LoginViewController/LoginViewController.xib; sourceTree = "<group>"; };
@@ -67,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				868201F817DDC08100D76D96 /* QuartzCore.framework in Frameworks */,
 				86F009ED17D784FE00EA4C38 /* UIKit.framework in Frameworks */,
 				86F009EF17D784FE00EA4C38 /* Foundation.framework in Frameworks */,
 				86F009F117D784FE00EA4C38 /* CoreGraphics.framework in Frameworks */,
@@ -76,6 +129,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		868201F917DDC0CB00D76D96 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				868201FA17DDC10200D76D96 /* SVProgressHUD */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		868201FA17DDC10200D76D96 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				868201FB17DDC10200D76D96 /* SVProgressHUD.bundle */,
+				868201FC17DDC10200D76D96 /* SVProgressHUD.h */,
+				868201FD17DDC10200D76D96 /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			path = UI/SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		8682020017DDC9AA00D76D96 /* UserMessagesController */ = {
+			isa = PBXGroup;
+			children = (
+				8682020117DDCAD800D76D96 /* UserMessagesController.h */,
+				8682020217DDCAD800D76D96 /* UserMessagesController.m */,
+				8682020317DDCAD800D76D96 /* UserMessagesController.xib */,
+			);
+			name = UserMessagesController;
+			sourceTree = "<group>";
+		};
+		8682020A17DDE0AA00D76D96 /* InboxMessageController */ = {
+			isa = PBXGroup;
+			children = (
+				8682020B17DDE10300D76D96 /* InboxMessageController.h */,
+				8682020C17DDE10300D76D96 /* InboxMessageController.m */,
+				86AE8B2817DE01ED00F217AF /* MessageCell.h */,
+				86AE8B2917DE01ED00F217AF /* MessageCell.m */,
+				86AE8B2B17DE020100F217AF /* MessageCell.xib */,
+			);
+			name = InboxMessageController;
+			sourceTree = "<group>";
+		};
+		86E30C5B17DA9B6300EE3DBC /* UserListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				86E30C5C17DA9BA300EE3DBC /* UserListViewController.h */,
+				86E30C5D17DA9BA300EE3DBC /* UserListViewController.m */,
+				86E30C5E17DA9BA300EE3DBC /* UserListViewController.xib */,
+				86E30C6117DAA11900EE3DBC /* UserListCell.h */,
+				86E30C6217DAA11900EE3DBC /* UserListCell.m */,
+				86E30C6617DAA15B00EE3DBC /* UserListCell.xib */,
+			);
+			name = UserListViewController;
+			sourceTree = "<group>";
+		};
 		86F009E017D784FE00EA4C38 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +206,7 @@
 				86F009EC17D784FE00EA4C38 /* UIKit.framework */,
 				86F009EE17D784FE00EA4C38 /* Foundation.framework */,
 				86F009F017D784FE00EA4C38 /* CoreGraphics.framework */,
+				868201F717DDC08000D76D96 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -106,6 +214,7 @@
 		86F009F217D784FE00EA4C38 /* OmyconfTest */ = {
 			isa = PBXGroup;
 			children = (
+				868201F917DDC0CB00D76D96 /* UI */,
 				86F00A3617D853E900EA4C38 /* Global */,
 				86F00A3217D84FE300EA4C38 /* Internet */,
 				86F00A1217D7890E00EA4C38 /* ViewControllers */,
@@ -135,7 +244,12 @@
 		86F00A0F17D7867100EA4C38 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				86F00A1017D7867C00EA4C38 /* logo.png */,
+				86AE8B3317DE216200F217AF /* msgImg.png */,
+				86AE8B3417DE216200F217AF /* msgImg@2x.png */,
+				8682020617DDCCF200D76D96 /* user_avatar.png */,
+				8682020717DDCCF200D76D96 /* user_avatar@2x.png */,
+				86E30C4E17DA910F00EE3DBC /* logoNew.png */,
+				86E30C4F17DA910F00EE3DBC /* logoNew@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -146,6 +260,9 @@
 				86F00A2B17D79F4400EA4C38 /* Base Abstract class */,
 				86F00A1B17D789F200EA4C38 /* LoginViewController */,
 				86F00A2117D78A5500EA4C38 /* SignUpViewController */,
+				86E30C5B17DA9B6300EE3DBC /* UserListViewController */,
+				8682020017DDC9AA00D76D96 /* UserMessagesController */,
+				8682020A17DDE0AA00D76D96 /* InboxMessageController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -175,6 +292,8 @@
 			children = (
 				86F00A2817D7950700EA4C38 /* UIView+Helpers.h */,
 				86F00A2917D7950700EA4C38 /* UIView+Helpers.m */,
+				86AE8B3017DE20F700F217AF /* UIImage+Helpers.h */,
+				86AE8B3117DE20F700F217AF /* UIImage+Helpers.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -184,8 +303,12 @@
 			children = (
 				86F00A2F17D84EF700EA4C38 /* BaseInternetController.h */,
 				86F00A3017D84EF700EA4C38 /* BaseInternetController.m */,
+				86E30C5517DA964500EE3DBC /* BaseNavigationController.h */,
+				86E30C5617DA964500EE3DBC /* BaseNavigationController.m */,
 				86F00A2C17D79F7A00EA4C38 /* BaseInputController.h */,
 				86F00A2D17D79F7A00EA4C38 /* BaseInputController.m */,
+				86E30C5817DA9B2600EE3DBC /* BaseTableController.h */,
+				86E30C5917DA9B2600EE3DBC /* BaseTableController.m */,
 			);
 			name = "Base Abstract class";
 			sourceTree = "<group>";
@@ -205,6 +328,8 @@
 				86F00A3717D8540400EA4C38 /* Constants.h */,
 				86F00A6E17D8980900EA4C38 /* Validator.h */,
 				86F00A6F17D8980900EA4C38 /* Validator.m */,
+				86E30C5217DA92B600EE3DBC /* Helpers.h */,
+				86E30C5317DA92B600EE3DBC /* Helpers.m */,
 			);
 			name = Global;
 			sourceTree = "<group>";
@@ -264,9 +389,19 @@
 				86F009FF17D784FE00EA4C38 /* Default.png in Resources */,
 				86F00A0117D784FE00EA4C38 /* Default@2x.png in Resources */,
 				86F00A0317D784FE00EA4C38 /* Default-568h@2x.png in Resources */,
-				86F00A1117D7867C00EA4C38 /* logo.png in Resources */,
 				86F00A2017D78A3400EA4C38 /* LoginViewController.xib in Resources */,
 				86F00A2617D78A8A00EA4C38 /* SignUpViewController.xib in Resources */,
+				86E30C5017DA910F00EE3DBC /* logoNew.png in Resources */,
+				86E30C5117DA910F00EE3DBC /* logoNew@2x.png in Resources */,
+				86E30C6017DA9BA300EE3DBC /* UserListViewController.xib in Resources */,
+				86E30C6717DAA15B00EE3DBC /* UserListCell.xib in Resources */,
+				868201FE17DDC10200D76D96 /* SVProgressHUD.bundle in Resources */,
+				8682020517DDCAD800D76D96 /* UserMessagesController.xib in Resources */,
+				8682020817DDCCF200D76D96 /* user_avatar.png in Resources */,
+				8682020917DDCCF200D76D96 /* user_avatar@2x.png in Resources */,
+				86AE8B2C17DE020100F217AF /* MessageCell.xib in Resources */,
+				86AE8B3517DE216200F217AF /* msgImg.png in Resources */,
+				86AE8B3617DE216200F217AF /* msgImg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +421,16 @@
 				86F00A3117D84EF700EA4C38 /* BaseInternetController.m in Sources */,
 				86F00A3517D8500900EA4C38 /* InternetProvider.m in Sources */,
 				86F00A7017D8980900EA4C38 /* Validator.m in Sources */,
+				86E30C5417DA92B600EE3DBC /* Helpers.m in Sources */,
+				86E30C5717DA964500EE3DBC /* BaseNavigationController.m in Sources */,
+				86E30C5A17DA9B2600EE3DBC /* BaseTableController.m in Sources */,
+				86E30C5F17DA9BA300EE3DBC /* UserListViewController.m in Sources */,
+				86E30C6317DAA11900EE3DBC /* UserListCell.m in Sources */,
+				868201FF17DDC10200D76D96 /* SVProgressHUD.m in Sources */,
+				8682020417DDCAD800D76D96 /* UserMessagesController.m in Sources */,
+				8682020E17DDE10300D76D96 /* InboxMessageController.m in Sources */,
+				86AE8B2A17DE01ED00F217AF /* MessageCell.m in Sources */,
+				86AE8B3217DE20F700F217AF /* UIImage+Helpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,10 +33,10 @@
 
 + (void)showError:(NSString *)errorText
 {
-    [[[UIAlertView alloc] initWithTitle:@"Error"
+    [[[UIAlertView alloc] initWithTitle:@"Ошибка"
                                 message:errorText
                                delegate:nil
-                      cancelButtonTitle:@"OK"
+                      cancelButtonTitle:@"ОК"
                       otherButtonTitles:nil] show];
 }
 

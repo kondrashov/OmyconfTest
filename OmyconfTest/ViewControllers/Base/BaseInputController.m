@@ -7,6 +7,9 @@
 //
 
 #import "BaseInputController.h"
+#import "AppDelegate.h"
+
+#define KEYBOARD_PADDING    10
 
 @interface BaseInputController ()
 
@@ -66,7 +69,8 @@
     aRect.size.height -= kbSize.height;
     if (!CGRectContainsPoint(aRect, activeField.frame.origin))
     {
-        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y - kbSize.height + 10);
+        CGFloat navBarHeight = self.navigationController.navigationBarHidden ? 0 : self.navigationController.navigationBar.frame.size.height;
+        CGPoint scrollPoint = CGPointMake(0.0, activeField.frame.origin.y - kbSize.height + navBarHeight + KEYBOARD_PADDING);
         [scrollView setContentOffset:scrollPoint animated:YES];
     }
 }

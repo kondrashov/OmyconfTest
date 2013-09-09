@@ -10,6 +10,7 @@
 
 @protocol InternetProviderDelegate <NSObject>
 
+- (void)connectionDidReceiveResponse;
 - (void)connectionDidFinishLoading:(NSData*)responseData;
 
 @optional

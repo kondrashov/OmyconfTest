@@ -28,9 +28,16 @@
 
 #pragma mark - InternetProvider Delegate
 
+- (void)connectionDidReceiveResponse
+{
+    [SVProgressHUD showWithStatus:@"Загрузка..." maskType:SVProgressHUDMaskTypeNone];
+}
+
 - (void)connectiondidFailWithError:(NSError *)error
 {
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"%@", error.localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [SVProgressHUD dismiss];
+    
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:[NSString stringWithFormat:@"%@", error.localizedDescription] delegate:nil cancelButtonTitle:@"ОК" otherButtonTitles: nil];
     [alert show];
     
     NSLog(@"Error connection - %@", error);
@@ -38,6 +45,8 @@
 
 - (void)connectionDidFinishLoading:(NSData *)responseData
 {
+    [SVProgressHUD dismiss];
+    
     // Override in child
 }
 

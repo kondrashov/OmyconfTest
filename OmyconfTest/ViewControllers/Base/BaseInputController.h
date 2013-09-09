@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseInternetController.h"
+#import "BaseNavigationController.h"
 
-@interface BaseInputController : BaseInternetController  <UITextFieldDelegate>
+@interface BaseInputController : BaseNavigationController  <UITextFieldDelegate>
 {
     IBOutlet UIScrollView *scrollView;
     IBOutletCollection(UITextField) NSArray *textFields;
