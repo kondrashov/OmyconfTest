@@ -12,8 +12,13 @@
 #define USER_LIST           @"user/list"
 #define MSG_LIST            @"msg/list"
 #define MSG_MY              @"msg/my"
+#define MSG_CREATE          @"msg/create"
+#define MSG_UPDATE          @"msg/update/"
 
 #define SignUpDidFinishedNotification   @"SignUpDidFinishedNotification"
 #define UserEmailKey                    @"UserEmail"
 #define UserPasswordKey                 @"UserPassword"
 #define UserListKey                     @"UserList"
+
+#define USER_EMAIL          [[NSUserDefaults standardUserDefaults] objectForKey:UserEmailKey]
+#define USER_PASSWORD       [[NSUserDefaults standardUserDefaults] objectForKey:UserPasswordKey]

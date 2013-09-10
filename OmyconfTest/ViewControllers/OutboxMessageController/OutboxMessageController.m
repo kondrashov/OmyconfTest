@@ -22,7 +22,7 @@
     if (self)
     {
         userId = userIdentifier;
-        self.title = @"Отправленные";
+        self.title = @"Исходящие";
     }
     return self;
 }
@@ -41,7 +41,7 @@
 
 - (void)loadingDataFinished
 {
-    lblNoData.text = @"Для этого пользователя нет отправленных сообщений";
+    lblNoData.text = @"Для этого пользователя нет исходящих сообщений";
     [self filteringMessageByKey:@"receiver"];
 }
 

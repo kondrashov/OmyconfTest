@@ -19,7 +19,7 @@
 @synthesize responseData;
 @synthesize urlConnection;
 
-#pragma mark - Load
+#pragma mark - Methods
 
 - (void)requestWithURL:(NSString*)stringURL;
 {
@@ -52,8 +52,8 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    if ([self.delegate respondsToSelector:@selector(connectionDidFinishLoading:)])
-        [self.delegate connectionDidFinishLoading:self.responseData];
+    if ([self.delegate respondsToSelector:@selector(connectionDidFinishLoading:provider:)])
+        [self.delegate connectionDidFinishLoading:self.responseData provider:self];
 }
 
 @end

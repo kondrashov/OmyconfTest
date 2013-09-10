@@ -23,6 +23,7 @@
     [super viewDidLoad];
     
     self.internetProvider = [InternetProvider new];
+    [self.internetProvider setTag:DEFAULT_PROVIDER_TAG];
     self.internetProvider.delegate = self;
 }
 
@@ -39,15 +40,13 @@
     
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:[NSString stringWithFormat:@"%@", error.localizedDescription] delegate:nil cancelButtonTitle:@"ОК" otherButtonTitles: nil];
     [alert show];
-    
-    NSLog(@"Error connection - %@", error);
 }
 
-- (void)connectionDidFinishLoading:(NSData *)responseData
+- (void)connectionDidFinishLoading:(NSData*)responseData provider:(InternetProvider *)provider
 {
     [SVProgressHUD dismiss];
-    
-    // Override in child
+
+    // Override in child    
 }
 
 @end

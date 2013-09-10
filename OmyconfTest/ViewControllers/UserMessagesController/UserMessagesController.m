@@ -9,6 +9,7 @@
 #import "UserMessagesController.h"
 #import "InboxMessageController.h"
 #import "OutboxMessageController.h"
+#import "SendMessageController.h"
 
 #define USER_MESSAGES_CELL_ID    @"UserMessagesCell"
 
@@ -63,8 +64,8 @@
     if(!self.dataArray)
     {
         self.dataArray = [NSMutableArray arrayWithObjects:  @"Входящие сообщения",
-                                                       @"Исходящие сообщения",
-                                                       @"Написать сообщение", nil];
+                                                            @"Исходящие сообщения",
+                                                            @"Написать сообщение", nil];
     }
     [tableView reloadData];
 }
@@ -105,9 +106,12 @@
         }
         break;
 
-        case 2: // New message
-            
-            break;
+        case 2: // Send message
+        {
+            SendMessageController *sendMsgController = [[SendMessageController alloc] initWithReceiverId:self.userId];
+            [self.navigationController pushViewController:sendMsgController animated:YES];
+        }
+        break;
 
         default:
             break;

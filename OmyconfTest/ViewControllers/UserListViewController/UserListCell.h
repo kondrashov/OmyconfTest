@@ -13,5 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblName;
 @property (strong, nonatomic) IBOutlet UILabel *lblEmail;
 @property (strong, nonatomic) NSString *userId;
+@property (assign, nonatomic) NSInteger msgNoViewCount;
+
+- (void)updateUI;
 
 @end

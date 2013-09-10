@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		865DB05117DE746100E53EBB /* CTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 865DB05017DE746100E53EBB /* CTextView.m */; };
+		865DB05617DE768600E53EBB /* SendMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 865DB05417DE768600E53EBB /* SendMessageController.m */; };
+		865DB05717DE768600E53EBB /* SendMessageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 865DB05517DE768600E53EBB /* SendMessageController.xib */; };
 		868201F817DDC08100D76D96 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868201F717DDC08000D76D96 /* QuartzCore.framework */; };
 		868201FE17DDC10200D76D96 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 868201FB17DDC10200D76D96 /* SVProgressHUD.bundle */; };
 		868201FF17DDC10200D76D96 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 868201FD17DDC10200D76D96 /* SVProgressHUD.m */; };
@@ -51,6 +54,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		865DB04F17DE746100E53EBB /* CTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTextView.h; path = UI/CTextView/CTextView.h; sourceTree = "<group>"; };
+		865DB05017DE746100E53EBB /* CTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTextView.m; path = UI/CTextView/CTextView.m; sourceTree = "<group>"; };
+		865DB05317DE768600E53EBB /* SendMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SendMessageController.h; path = ViewControllers/SendMessageController/SendMessageController.h; sourceTree = "<group>"; };
+		865DB05417DE768600E53EBB /* SendMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SendMessageController.m; path = ViewControllers/SendMessageController/SendMessageController.m; sourceTree = "<group>"; };
+		865DB05517DE768600E53EBB /* SendMessageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SendMessageController.xib; path = ViewControllers/SendMessageController/SendMessageController.xib; sourceTree = "<group>"; };
 		868201F717DDC08000D76D96 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		868201FB17DDC10200D76D96 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		868201FC17DDC10200D76D96 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
@@ -132,9 +140,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		865DB04E17DE742500E53EBB /* CTextView */ = {
+			isa = PBXGroup;
+			children = (
+				865DB04F17DE746100E53EBB /* CTextView.h */,
+				865DB05017DE746100E53EBB /* CTextView.m */,
+			);
+			name = CTextView;
+			sourceTree = "<group>";
+		};
+		865DB05217DE761700E53EBB /* SendMessageController */ = {
+			isa = PBXGroup;
+			children = (
+				865DB05317DE768600E53EBB /* SendMessageController.h */,
+				865DB05417DE768600E53EBB /* SendMessageController.m */,
+				865DB05517DE768600E53EBB /* SendMessageController.xib */,
+			);
+			name = SendMessageController;
+			sourceTree = "<group>";
+		};
 		868201F917DDC0CB00D76D96 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				865DB04E17DE742500E53EBB /* CTextView */,
 				868201FA17DDC10200D76D96 /* SVProgressHUD */,
 			);
 			name = UI;
@@ -276,6 +304,7 @@
 				8682020017DDC9AA00D76D96 /* UserMessagesController */,
 				8682020A17DDE0AA00D76D96 /* InboxMessageController */,
 				86AE8B3717DE37A100F217AF /* OutboxMessageController */,
+				865DB05217DE761700E53EBB /* SendMessageController */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -415,6 +444,7 @@
 				86AE8B2C17DE020100F217AF /* MessageCell.xib in Resources */,
 				86AE8B3517DE216200F217AF /* msgImg.png in Resources */,
 				86AE8B3617DE216200F217AF /* msgImg@2x.png in Resources */,
+				865DB05717DE768600E53EBB /* SendMessageController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,6 +475,8 @@
 				86AE8B2A17DE01ED00F217AF /* MessageCell.m in Sources */,
 				86AE8B3217DE20F700F217AF /* UIImage+Helpers.m in Sources */,
 				86AE8B3A17DE37CD00F217AF /* OutboxMessageController.m in Sources */,
+				865DB05117DE746100E53EBB /* CTextView.m in Sources */,
+				865DB05617DE768600E53EBB /* SendMessageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +537,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Vitalii Todorovych";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Vitalii Todorovych";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -513,6 +546,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "BB3FF2DA-C817-43CF-A4AE-11FDBDD18496";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BB3FF2DA-C817-43CF-A4AE-11FDBDD18496";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class InternetProvider;
 @protocol InternetProviderDelegate <NSObject>
 
 - (void)connectionDidReceiveResponse;
-- (void)connectionDidFinishLoading:(NSData*)responseData;
+- (void)connectionDidFinishLoading:(NSData*)responseData provider:(InternetProvider *)provider;
 
 @optional
 - (void)connectiondidFailWithError:(NSError *)error;
@@ -22,6 +23,7 @@
 
 @property (strong, nonatomic) NSMutableData *responseData;
 @property (weak, nonatomic) id<InternetProviderDelegate> delegate;
+@property (assign, nonatomic) NSInteger tag;
 
 - (void)requestWithURL:(NSString*)stringURL;
 

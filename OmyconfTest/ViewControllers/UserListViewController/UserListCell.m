@@ -9,21 +9,32 @@
 #import "UserListCell.h"
 
 @implementation UserListCell
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
+    UILabel *lblMsgCount;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self)
+    {
+        lblMsgCount = [UILabel new];
+        [self.contentView addSubview:lblMsgCount];
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+- (void)updateUI
 {
-    [super setSelected:selected animated:animated];
+    if(self.msgNoViewCount)
+        lblMsgCount.text = [NSString stringWithFormat:@"%d", self.msgNoViewCount];
+    else
+        lblMsgCount.text = @"";
 
-    // Configure the view for the selected state
+    lblMsgCount.font = [UIFont boldSystemFontOfSize:15];
+    lblMsgCount.textColor = [UIColor redColor];
+    [lblMsgCount sizeToFit];
+    lblMsgCount.frame = CGRectMake(self.contentView.width - lblMsgCount.width - 10, self.contentView.height / 2 - lblMsgCount.height / 2, lblMsgCount.width, lblMsgCount.height);
 }
 
 @end

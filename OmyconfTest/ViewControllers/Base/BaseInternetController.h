@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "InternetProvider.h"
 
+#define DEFAULT_PROVIDER_TAG  1
+
 @interface BaseInternetController : UIViewController <InternetProviderDelegate>
 
 @property (strong, nonatomic) InternetProvider *internetProvider;

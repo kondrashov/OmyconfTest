@@ -30,6 +30,9 @@
          contextName = "-[UserMessagesController initWithUserName:userEmail:]:UserMessagesController.m">
       </ContextState>
       <ContextState
+         contextName = "-[InternetProvider connectionDidFinishLoading:]:InternetProvider.m">
+      </ContextState>
+      <ContextState
          contextName = "-[UserListViewController createCellWithIndexPath:]:UserListViewController.m">
       </ContextState>
       <ContextState
@@ -45,6 +48,14 @@
       </ContextState>
       <ContextState
          contextName = "-[UserListViewController tableView:didSelectRowAtIndexPath:]:UserListViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[UserListViewController msgProviderHandler:]:UserListViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "msgArray">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

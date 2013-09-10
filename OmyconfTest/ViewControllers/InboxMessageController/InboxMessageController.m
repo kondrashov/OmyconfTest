@@ -13,6 +13,8 @@
 
 @interface InboxMessageController ()
 
+@property (strong, nonatomic) NSMutableArray *inetProvidersArray;
+
 @end
 
 @implementation InboxMessageController
@@ -46,6 +48,13 @@
 {
     lblNoData.text = @"От этого пользователя нет входящих сообщений";
     [self filteringMessageByKey:@"sender"];
+    [self viewMessages];
+}
+
+- (void)visualConfigureFinished
+{
+    [SVProgressHUD dismiss];
+    [tableView reloadData];
 }
 
 - (void)saveData:(id)data
@@ -53,9 +62,40 @@
     
 }
 
+- (void)loadMoreData
+{
+    
+}
+
 - (void)configureTable
 {
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+#pragma mark - Private methods
+
+- (void)viewMessages
+{
+    if(!self.inetProvidersArray)
+        self.inetProvidersArray = [NSMutableArray array];
+    else
+        [self.inetProvidersArray removeAllObjects];
+    
+    for(NSDictionary *dict in self.dataArray)
+    {
+        InternetProvider *inetProvider = [InternetProvider new];
+        [inetProvider setDelegate:nil];
+        
+        NSString *stringURL = [NSString stringWithFormat:@"%@%@/%@?email=%@&password=%@",
+                               BASE_URL,
+                               MSG_UPDATE,
+                               [dict objectForKey:@"id"],
+                               [USER_EMAIL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                               [USER_PASSWORD stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        
+        [inetProvider requestWithURL:stringURL];
+        [self.inetProvidersArray addObject:inetProvider];
+    }
 }
 
 #pragma mark - Private methods

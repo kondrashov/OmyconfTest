@@ -112,12 +112,9 @@
 
 #pragma mark - InternetProvider Delegate
 
-- (void)connectionDidFinishLoading:(NSData *)responseData
+- (void)connectionDidFinishLoading:(NSData*)responseData provider:(InternetProvider *)provider
 {
-   [super connectionDidFinishLoading:responseData];
-    
-    NSString *dataString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@", dataString);
+   [super connectionDidFinishLoading:responseData provider:provider];
     
     NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:responseData
                                                              options:NSJSONReadingMutableContainers
