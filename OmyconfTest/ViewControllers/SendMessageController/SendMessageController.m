@@ -13,6 +13,7 @@
     NSString *receiverId;
     IBOutlet UILabel *lblReceiverName;
     IBOutlet UIButton *btnSend;
+    BOOL sendSuccess;
 }
 
 @property (strong, nonatomic) IBOutlet CTextView *textView;
@@ -100,11 +101,25 @@
                                                              options:NSJSONReadingMutableContainers
                                                                error:nil];
     
+    if([[jsonDict objectForKey:@"error"] integerValue] == 0)
+        sendSuccess = YES;
+    else
+        sendSuccess = NO;
+    
     [[[UIAlertView alloc] initWithTitle:nil
                                 message:[jsonDict objectForKey:@"message"]
                                delegate:self
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(sendSuccess)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:MsgSendSuccessNotification object:nil];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

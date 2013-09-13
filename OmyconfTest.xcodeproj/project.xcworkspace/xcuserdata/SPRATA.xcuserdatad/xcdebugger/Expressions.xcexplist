@@ -33,6 +33,14 @@
          contextName = "-[InternetProvider connectionDidFinishLoading:]:InternetProvider.m">
       </ContextState>
       <ContextState
+         contextName = "-[UserMessagesController createChatMessages]:UserMessagesController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.dataArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[UserListViewController createCellWithIndexPath:]:UserListViewController.m">
       </ContextState>
       <ContextState
@@ -56,6 +64,9 @@
                value = "msgArray">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UserMessagesController inboxDownloadDidFinish:]:UserMessagesController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

@@ -14,8 +14,8 @@
 #define LABEL_FRAME             LABEL_INSET, LABEL_TOP_INSET, CELL_WIDTH - LABEL_INSET * 2, CELL_HEIGHT - LABEL_INSET * 2
 #define CELL_WIDTH              320
 #define CELL_HEIGHT             44
-#define LABEL_INSET             20
-#define LABEL_TOP_INSET         30
+#define LABEL_INSET             25
+#define LABEL_TOP_INSET         33
 #define BACKG_IMG_TOP_INSET     20
 #define BACKG_IMG_INSET         10
 
@@ -30,9 +30,7 @@
     self = [super initWithCoder:aDecoder];
     if(self)
     {
-        UIImage *img = [[UIImage imageNamed:@"msgImg"] safeResizableImageWithCapInsets:UIEdgeInsetsMake(8, 8, 8, 8)
-                                                                          resizingMode:UIImageResizingModeStretch];
-        msgImgView = [[UIImageView alloc] initWithImage:img];
+        msgImgView = [[UIImageView alloc] init];
         lblUserName = [UILabel new];
     }
     return self;
@@ -51,6 +49,15 @@
 
 - (void)updateCellWithText:(NSString *)text userId:(NSString *)userId
 {
+    if([userId isEqualToString:@"Я"])
+    {
+        msgImgView.image = [[UIImage imageNamed:@"bubbleMine.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:14];
+    }
+    else
+    {
+        msgImgView.image = [[UIImage imageNamed:@"bubbleSomeone.png"] stretchableImageWithLeftCapWidth:21 topCapHeight:14];
+    }
+    
     if(msgImgView.superview != self.contentView)
        [self.contentView insertSubview:msgImgView belowSubview:self.lblMessage];
     

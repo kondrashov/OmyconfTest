@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "CTextField.h"
 
 #define EMAIL           0
 #define PASSWORD        1
@@ -16,10 +17,15 @@
 @interface SignUpViewController ()
 {
     BOOL signUpSuccess;
+    BOOL signUpPress;
 }
 
 @property (strong, nonatomic) IBOutlet UIButton *btnSignUp;
 @property (strong, nonatomic) IBOutlet UILabel *lblEmail;
+@property (strong, nonatomic) IBOutlet UILabel *lblEmailError;
+@property (strong, nonatomic) IBOutlet UILabel *lblPassError;
+@property (strong, nonatomic) IBOutlet UILabel *lblFirstNameError;
+@property (strong, nonatomic) IBOutlet UILabel *lblLastNameError;
 
 @end
 
@@ -47,10 +53,42 @@
 {
     [self setBtnSignUp:nil];
     [self setLblEmail:nil];
+    [self setLblEmailError:nil];
+    [self setLblPassError:nil];
+    [self setLblFirstNameError:nil];
+    [self setLblLastNameError:nil];
     [super viewDidUnload];
 }
 
 #pragma mark - TextField delegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    textField.text = [textField.text stringByReplacingCharactersInRange:range withString:string];    
+
+    SEL validationSeector;    
+    switch (textField.tag)
+    {
+        case 1:
+            validationSeector = @selector(checkEmail);
+            break;
+            
+        case 2:
+            validationSeector = @selector(checkPass);
+            break;
+
+        case 3:
+            validationSeector = @selector(checkFirstName);
+            break;
+
+        case 4:
+            validationSeector = @selector(checkLastName);
+            break;
+    }
+    
+    [self validateTextField:(CTextField *)textField selector:validationSeector];
+    return NO;
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -67,35 +105,100 @@
 
 #pragma mark - Private methods
 
-- (BOOL)inputValidation
+- (BOOL)checkEmail
 {
-    if([Validator checkEmail:[textFields[EMAIL] text]])
+    return [Validator checkEmail:[textFields[EMAIL] text]];
+}
+
+- (BOOL)checkPass
+{
+    return [Validator checkPassword:[textFields[PASSWORD] text]];
+}
+
+- (BOOL)checkFirstName
+{
+    return [Validator checkName:[textFields[FIRST_NAME] text]];
+}
+
+- (BOOL)checkLastName
+{
+    return [Validator checkName:[textFields[LAST_NAME] text]];
+}
+
+- (BOOL)validateTextField:(CTextField *)textField selector:(SEL)selector
+{
+    BOOL valid;
+    UILabel *errorLabel;
+    
+    switch (textField.tag)
     {
-        if([Validator checkPassword:[textFields[PASSWORD] text]])
+        case 1:
+            errorLabel = self.lblEmailError;
+            errorLabel.text = EMAIL_ERROR;
+            break;
+
+        case 2:
+            errorLabel = self.lblPassError;
+            errorLabel.text = PASSWORD_ERROR;
+            break;
+            
+        case 3:
+            errorLabel = self.lblFirstNameError;
+            errorLabel.text = FIRST_NAME_ERROR;
+            break;
+            
+        case 4:
+            errorLabel = self.lblLastNameError;
+            errorLabel.text = LAST_NAME_ERROR;
+            break;
+    }
+    
+    if([textField text].length == 0)
+    {
+        if(signUpPress)
         {
-            if([Validator checkName:[textFields[FIRST_NAME] text]])
-            {
-                if([Validator checkName:[textFields[LAST_NAME] text]])
-                    return YES;
-                else
-                    [Validator showError:LAST_NAME_ERROR];
-            }
-            else
-                [Validator showError:FIRST_NAME_ERROR];
+            [textField setState:CTFError];
+            errorLabel.hidden = NO;
         }
         else
-            [Validator showError:PASSWORD_ERROR];
+        {
+            [textField setState:CTFNormal];
+            errorLabel.hidden = YES;
+        }
+        valid = NO;
     }
-    else
-        [Validator showError:EMAIL_ERROR];
+    else if([self performSelector:selector])
+    {
+        [textField setState:CTFOK];
+        errorLabel.hidden = YES;
+        valid = YES;
+    }
+        else
+        {
+            [textField setState:CTFError];
+            errorLabel.hidden = NO;
+            valid = NO;
+        }
+    
+    return valid;
+}
 
-    return NO;
+- (BOOL)inputValidation
+{
+    BOOL emailValid = [self validateTextField:textFields[EMAIL] selector:@selector(checkEmail)];
+    BOOL passValid = [self validateTextField:textFields[PASSWORD] selector:@selector(checkPass)];
+    BOOL firstNameValid = [self validateTextField:textFields[FIRST_NAME] selector:@selector(checkFirstName)];
+    BOOL lastNameValid = [self validateTextField:textFields[LAST_NAME] selector:@selector(checkLastName)];
+    
+    signUpPress = NO;
+    return (emailValid && passValid && firstNameValid && lastNameValid);
 }
 
 #pragma mark - Actions
 
 - (IBAction)onSignUp:(id)sender
 {
+    signUpPress = YES;
     if([self inputValidation])
     {
         NSString *stringURL = [NSString stringWithFormat:@"%@%@?first_name=%@&last_name=%@&email=%@&password=%@",
@@ -140,6 +243,10 @@
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:SignUpDidFinishedNotification object:[textFields[EMAIL] text]];
         [self.navigationController popViewControllerAnimated:YES];
+    }
+    else
+    {
+        [textFields[EMAIL] setState:CTFError];
     }
 }
 

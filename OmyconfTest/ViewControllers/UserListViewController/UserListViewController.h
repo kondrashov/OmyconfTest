@@ -16,5 +16,6 @@
 - (NSString *)getRequestURL;
 - (void)loadingDataFinished;
 - (void)visualConfigureFinished;
+- (void)loadData;
 
 @end

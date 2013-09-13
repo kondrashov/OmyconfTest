@@ -23,8 +23,9 @@
 - (void)configureNavBar
 {
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    self.navigationController.navigationBar.tintColor = RGBCOLOR(233, 208, 168);
+    self.navigationController.navigationBar.tintColor = DEFAULT_COLOR;
     self.navigationItem.titleView = [self getTitleView];
+    self.navigationItem.title = @"Назад";
 }
 
 -(UIView *)getTitleView
@@ -34,7 +35,7 @@
     [label setTextAlignment:UITextAlignmentCenter];
     [label setTextColor:RGBCOLOR(70, 73, 80)];
     [label setText:self.title];
-    [label setFont:[UIFont boldSystemFontOfSize:18]];
+    [label setFont:[UIFont boldSystemFontOfSize:17]];
     [label sizeToFit];
     return label;
 }

@@ -27,6 +27,13 @@
     self.internetProvider.delegate = self;
 }
 
+#pragma mark - Methods
+
+- (void)loadData
+{
+    loadNow = YES;
+}
+
 #pragma mark - InternetProvider Delegate
 
 - (void)connectionDidReceiveResponse
@@ -36,6 +43,7 @@
 
 - (void)connectiondidFailWithError:(NSError *)error
 {
+    loadNow = NO;
     [SVProgressHUD dismiss];
     
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:[NSString stringWithFormat:@"%@", error.localizedDescription] delegate:nil cancelButtonTitle:@"ОК" otherButtonTitles: nil];
@@ -44,6 +52,7 @@
 
 - (void)connectionDidFinishLoading:(NSData*)responseData provider:(InternetProvider *)provider
 {
+    loadNow = NO;
     [SVProgressHUD dismiss];
 
     // Override in child    

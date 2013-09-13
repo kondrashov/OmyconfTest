@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadData];
 }
 
 #pragma mark - Parent methods
@@ -49,6 +50,9 @@
     lblNoData.text = @"От этого пользователя нет входящих сообщений";
     [self filteringMessageByKey:@"sender"];
     [self viewMessages];
+    
+    if([self.delegate respondsToSelector:@selector(inboxDownloadDidFinish:)])
+        [self.delegate inboxDownloadDidFinish:self.dataArray];
 }
 
 - (void)visualConfigureFinished
@@ -83,18 +87,21 @@
     
     for(NSDictionary *dict in self.dataArray)
     {
-        InternetProvider *inetProvider = [InternetProvider new];
-        [inetProvider setDelegate:nil];
-        
-        NSString *stringURL = [NSString stringWithFormat:@"%@%@/%@?email=%@&password=%@",
-                               BASE_URL,
-                               MSG_UPDATE,
-                               [dict objectForKey:@"id"],
-                               [USER_EMAIL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                               [USER_PASSWORD stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        
-        [inetProvider requestWithURL:stringURL];
-        [self.inetProvidersArray addObject:inetProvider];
+        if([[dict objectForKey:@"viewed"] integerValue] == 0)
+        {
+            InternetProvider *inetProvider = [InternetProvider new];
+            [inetProvider setDelegate:nil];
+            
+            NSString *stringURL = [NSString stringWithFormat:@"%@%@/%@?email=%@&password=%@",
+                                   BASE_URL,
+                                   MSG_UPDATE,
+                                   [dict objectForKey:@"id"],
+                                   [USER_EMAIL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                                   [USER_PASSWORD stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            
+            [inetProvider requestWithURL:stringURL];
+            [self.inetProvidersArray addObject:inetProvider];
+        }
     }
 }
 

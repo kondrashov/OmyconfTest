@@ -16,6 +16,7 @@
 #define MSG_UPDATE          @"msg/update/"
 
 #define SignUpDidFinishedNotification   @"SignUpDidFinishedNotification"
+#define MsgSendSuccessNotification      @"MsgSendSuccessNotification"
 #define UserEmailKey                    @"UserEmail"
 #define UserPasswordKey                 @"UserPassword"
 #define UserListKey                     @"UserList"

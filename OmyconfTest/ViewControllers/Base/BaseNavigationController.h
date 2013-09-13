@@ -10,4 +10,6 @@
 
 @interface BaseNavigationController : BaseInternetController
 
+- (void)configureNavBar;
+
 @end

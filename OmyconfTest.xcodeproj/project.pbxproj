@@ -21,9 +21,21 @@
 		86AE8B2A17DE01ED00F217AF /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8B2917DE01ED00F217AF /* MessageCell.m */; };
 		86AE8B2C17DE020100F217AF /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86AE8B2B17DE020100F217AF /* MessageCell.xib */; };
 		86AE8B3217DE20F700F217AF /* UIImage+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8B3117DE20F700F217AF /* UIImage+Helpers.m */; };
-		86AE8B3517DE216200F217AF /* msgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AE8B3317DE216200F217AF /* msgImg.png */; };
-		86AE8B3617DE216200F217AF /* msgImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AE8B3417DE216200F217AF /* msgImg@2x.png */; };
 		86AE8B3A17DE37CD00F217AF /* OutboxMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AE8B3917DE37CD00F217AF /* OutboxMessageController.m */; };
+		86BD61FC17E19DE4004327A7 /* CTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BD61FB17E19DE4004327A7 /* CTextField.m */; };
+		86BD620F17E26C34004327A7 /* bubbleMine.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620317E26C33004327A7 /* bubbleMine.png */; };
+		86BD621017E26C34004327A7 /* bubbleMine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620417E26C33004327A7 /* bubbleMine@2x.png */; };
+		86BD621117E26C34004327A7 /* bubbleSomeone.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620517E26C33004327A7 /* bubbleSomeone.png */; };
+		86BD621217E26C34004327A7 /* bubbleSomeone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620617E26C33004327A7 /* bubbleSomeone@2x.png */; };
+		86BD621317E26C34004327A7 /* msgImg.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620717E26C33004327A7 /* msgImg.png */; };
+		86BD621417E26C34004327A7 /* msgImg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620817E26C33004327A7 /* msgImg@2x.png */; };
+		86BD621517E26C34004327A7 /* textfieldError.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620917E26C33004327A7 /* textfieldError.png */; };
+		86BD621617E26C34004327A7 /* textfieldError@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620A17E26C33004327A7 /* textfieldError@2x.png */; };
+		86BD621717E26C34004327A7 /* textfieldNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620B17E26C33004327A7 /* textfieldNormal.png */; };
+		86BD621817E26C34004327A7 /* textfieldNormal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620C17E26C33004327A7 /* textfieldNormal@2x.png */; };
+		86BD621917E26C34004327A7 /* textfieldOk.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620D17E26C34004327A7 /* textfieldOk.png */; };
+		86BD621A17E26C34004327A7 /* textfieldOk@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86BD620E17E26C34004327A7 /* textfieldOk@2x.png */; };
+		86BD621D17E2F468004327A7 /* NoMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BD621C17E2F467004327A7 /* NoMessageCell.m */; };
 		86E30C5017DA910F00EE3DBC /* logoNew.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E30C4E17DA910F00EE3DBC /* logoNew.png */; };
 		86E30C5117DA910F00EE3DBC /* logoNew@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86E30C4F17DA910F00EE3DBC /* logoNew@2x.png */; };
 		86E30C5417DA92B600EE3DBC /* Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E30C5317DA92B600EE3DBC /* Helpers.m */; };
@@ -75,10 +87,24 @@
 		86AE8B2B17DE020100F217AF /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MessageCell.xib; path = ViewControllers/InboxMessageController/MessageCell.xib; sourceTree = "<group>"; };
 		86AE8B3017DE20F700F217AF /* UIImage+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Helpers.h"; path = "Categories/UIImage+Helpers.h"; sourceTree = "<group>"; };
 		86AE8B3117DE20F700F217AF /* UIImage+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Helpers.m"; path = "Categories/UIImage+Helpers.m"; sourceTree = "<group>"; };
-		86AE8B3317DE216200F217AF /* msgImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgImg.png; sourceTree = "<group>"; };
-		86AE8B3417DE216200F217AF /* msgImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "msgImg@2x.png"; sourceTree = "<group>"; };
 		86AE8B3817DE37CD00F217AF /* OutboxMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutboxMessageController.h; path = ViewControllers/OutboxMessageController/OutboxMessageController.h; sourceTree = "<group>"; };
 		86AE8B3917DE37CD00F217AF /* OutboxMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutboxMessageController.m; path = ViewControllers/OutboxMessageController/OutboxMessageController.m; sourceTree = "<group>"; };
+		86BD61FA17E19DE4004327A7 /* CTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTextField.h; path = UI/CTextField/CTextField.h; sourceTree = "<group>"; };
+		86BD61FB17E19DE4004327A7 /* CTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTextField.m; path = UI/CTextField/CTextField.m; sourceTree = "<group>"; };
+		86BD620317E26C33004327A7 /* bubbleMine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleMine.png; path = Images/bubbleMine.png; sourceTree = "<group>"; };
+		86BD620417E26C33004327A7 /* bubbleMine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleMine@2x.png"; path = "Images/bubbleMine@2x.png"; sourceTree = "<group>"; };
+		86BD620517E26C33004327A7 /* bubbleSomeone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bubbleSomeone.png; path = Images/bubbleSomeone.png; sourceTree = "<group>"; };
+		86BD620617E26C33004327A7 /* bubbleSomeone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bubbleSomeone@2x.png"; path = "Images/bubbleSomeone@2x.png"; sourceTree = "<group>"; };
+		86BD620717E26C33004327A7 /* msgImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = msgImg.png; path = Images/msgImg.png; sourceTree = "<group>"; };
+		86BD620817E26C33004327A7 /* msgImg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "msgImg@2x.png"; path = "Images/msgImg@2x.png"; sourceTree = "<group>"; };
+		86BD620917E26C33004327A7 /* textfieldError.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textfieldError.png; path = Images/textfieldError.png; sourceTree = "<group>"; };
+		86BD620A17E26C33004327A7 /* textfieldError@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textfieldError@2x.png"; path = "Images/textfieldError@2x.png"; sourceTree = "<group>"; };
+		86BD620B17E26C33004327A7 /* textfieldNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textfieldNormal.png; path = Images/textfieldNormal.png; sourceTree = "<group>"; };
+		86BD620C17E26C33004327A7 /* textfieldNormal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textfieldNormal@2x.png"; path = "Images/textfieldNormal@2x.png"; sourceTree = "<group>"; };
+		86BD620D17E26C34004327A7 /* textfieldOk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textfieldOk.png; path = Images/textfieldOk.png; sourceTree = "<group>"; };
+		86BD620E17E26C34004327A7 /* textfieldOk@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textfieldOk@2x.png"; path = "Images/textfieldOk@2x.png"; sourceTree = "<group>"; };
+		86BD621B17E2F467004327A7 /* NoMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoMessageCell.h; path = ViewControllers/UserMessagesController/NoMessageCell.h; sourceTree = "<group>"; };
+		86BD621C17E2F467004327A7 /* NoMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoMessageCell.m; path = ViewControllers/UserMessagesController/NoMessageCell.m; sourceTree = "<group>"; };
 		86E30C4E17DA910F00EE3DBC /* logoNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logoNew.png; path = Images/logoNew.png; sourceTree = "<group>"; };
 		86E30C4F17DA910F00EE3DBC /* logoNew@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logoNew@2x.png"; path = "Images/logoNew@2x.png"; sourceTree = "<group>"; };
 		86E30C5217DA92B600EE3DBC /* Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helpers.h; path = Global/Helpers.h; sourceTree = "<group>"; };
@@ -162,6 +188,7 @@
 		868201F917DDC0CB00D76D96 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				86BD61F917E19DC2004327A7 /* CTextField */,
 				865DB04E17DE742500E53EBB /* CTextView */,
 				868201FA17DDC10200D76D96 /* SVProgressHUD */,
 			);
@@ -185,6 +212,8 @@
 				8682020117DDCAD800D76D96 /* UserMessagesController.h */,
 				8682020217DDCAD800D76D96 /* UserMessagesController.m */,
 				8682020317DDCAD800D76D96 /* UserMessagesController.xib */,
+				86BD621B17E2F467004327A7 /* NoMessageCell.h */,
+				86BD621C17E2F467004327A7 /* NoMessageCell.m */,
 			);
 			name = UserMessagesController;
 			sourceTree = "<group>";
@@ -208,6 +237,15 @@
 				86AE8B3917DE37CD00F217AF /* OutboxMessageController.m */,
 			);
 			name = OutboxMessageController;
+			sourceTree = "<group>";
+		};
+		86BD61F917E19DC2004327A7 /* CTextField */ = {
+			isa = PBXGroup;
+			children = (
+				86BD61FA17E19DE4004327A7 /* CTextField.h */,
+				86BD61FB17E19DE4004327A7 /* CTextField.m */,
+			);
+			name = CTextField;
 			sourceTree = "<group>";
 		};
 		86E30C5B17DA9B6300EE3DBC /* UserListViewController */ = {
@@ -284,8 +322,18 @@
 		86F00A0F17D7867100EA4C38 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				86AE8B3317DE216200F217AF /* msgImg.png */,
-				86AE8B3417DE216200F217AF /* msgImg@2x.png */,
+				86BD620317E26C33004327A7 /* bubbleMine.png */,
+				86BD620417E26C33004327A7 /* bubbleMine@2x.png */,
+				86BD620517E26C33004327A7 /* bubbleSomeone.png */,
+				86BD620617E26C33004327A7 /* bubbleSomeone@2x.png */,
+				86BD620717E26C33004327A7 /* msgImg.png */,
+				86BD620817E26C33004327A7 /* msgImg@2x.png */,
+				86BD620917E26C33004327A7 /* textfieldError.png */,
+				86BD620A17E26C33004327A7 /* textfieldError@2x.png */,
+				86BD620B17E26C33004327A7 /* textfieldNormal.png */,
+				86BD620C17E26C33004327A7 /* textfieldNormal@2x.png */,
+				86BD620D17E26C34004327A7 /* textfieldOk.png */,
+				86BD620E17E26C34004327A7 /* textfieldOk@2x.png */,
 				8682020617DDCCF200D76D96 /* user_avatar.png */,
 				8682020717DDCCF200D76D96 /* user_avatar@2x.png */,
 				86E30C4E17DA910F00EE3DBC /* logoNew.png */,
@@ -442,9 +490,19 @@
 				8682020817DDCCF200D76D96 /* user_avatar.png in Resources */,
 				8682020917DDCCF200D76D96 /* user_avatar@2x.png in Resources */,
 				86AE8B2C17DE020100F217AF /* MessageCell.xib in Resources */,
-				86AE8B3517DE216200F217AF /* msgImg.png in Resources */,
-				86AE8B3617DE216200F217AF /* msgImg@2x.png in Resources */,
 				865DB05717DE768600E53EBB /* SendMessageController.xib in Resources */,
+				86BD620F17E26C34004327A7 /* bubbleMine.png in Resources */,
+				86BD621017E26C34004327A7 /* bubbleMine@2x.png in Resources */,
+				86BD621117E26C34004327A7 /* bubbleSomeone.png in Resources */,
+				86BD621217E26C34004327A7 /* bubbleSomeone@2x.png in Resources */,
+				86BD621317E26C34004327A7 /* msgImg.png in Resources */,
+				86BD621417E26C34004327A7 /* msgImg@2x.png in Resources */,
+				86BD621517E26C34004327A7 /* textfieldError.png in Resources */,
+				86BD621617E26C34004327A7 /* textfieldError@2x.png in Resources */,
+				86BD621717E26C34004327A7 /* textfieldNormal.png in Resources */,
+				86BD621817E26C34004327A7 /* textfieldNormal@2x.png in Resources */,
+				86BD621917E26C34004327A7 /* textfieldOk.png in Resources */,
+				86BD621A17E26C34004327A7 /* textfieldOk@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +535,8 @@
 				86AE8B3A17DE37CD00F217AF /* OutboxMessageController.m in Sources */,
 				865DB05117DE746100E53EBB /* CTextView.m in Sources */,
 				865DB05617DE768600E53EBB /* SendMessageController.m in Sources */,
+				86BD61FC17E19DE4004327A7 /* CTextField.m in Sources */,
+				86BD621D17E2F468004327A7 /* NoMessageCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +566,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vitalii Todorovych (6EM64P252H)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vitalii Todorovych (6EM64P252H)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -521,6 +582,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "50AE9DF6-F940-4AD1-B6FB-F70B535FCEA2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "50AE9DF6-F940-4AD1-B6FB-F70B535FCEA2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -546,8 +609,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "BB3FF2DA-C817-43CF-A4AE-11FDBDD18496";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BB3FF2DA-C817-43CF-A4AE-11FDBDD18496";
+				PROVISIONING_PROFILE = "B9691728-469B-495D-9C35-7D35A5CB04C6";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9691728-469B-495D-9C35-7D35A5CB04C6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -561,6 +624,7 @@
 				INFOPLIST_FILE = "OmyconfTest/OmyconfTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -573,6 +637,7 @@
 				INFOPLIST_FILE = "OmyconfTest/OmyconfTest-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WARNING_CFLAGS = "-Wno-arc-performSelector-leaks";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

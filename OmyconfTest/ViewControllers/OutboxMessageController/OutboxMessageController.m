@@ -43,6 +43,10 @@
 {
     lblNoData.text = @"Для этого пользователя нет исходящих сообщений";
     [self filteringMessageByKey:@"receiver"];
+    
+    if([self.delegate respondsToSelector:@selector(outboxDownloadDidFinish:)])
+        [self.delegate outboxDownloadDidFinish:self.dataArray];
+
 }
 
 @end

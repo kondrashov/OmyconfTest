@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UserListViewController.h"
+#import "CTextField.h"
 
 #define EMAIL       0
 #define PASSWORD    1
@@ -15,9 +16,12 @@
 @interface LoginViewController ()
 {
     BOOL loginSuccess;
+    BOOL loginPress;
 }
 
 @property (strong, nonatomic) IBOutlet UIButton *btnSignUp;
+@property (strong, nonatomic) IBOutlet UILabel *lblEmailError;
+@property (strong, nonatomic) IBOutlet UILabel *lblPassError;
 
 @end
 
@@ -40,11 +44,17 @@
 {
     [super viewDidLoad];
     scrollView.contentSize = CGSizeMake(self.view.width, self.btnSignUp.y + self.btnSignUp.height);
+    
+//#warning !!!! REMOVE BEFORE RELEASE !!!!
+//    [textFields[EMAIL] setText:@"ally1308@yandex.ru"];
+//    [textFields[PASSWORD] setText:@"1234567"];
 }
 
 - (void)viewDidUnload
 {
     [self setBtnSignUp:nil];
+    [self setLblEmailError:nil];
+    [self setLblPassError:nil];
     [super viewDidUnload];
 }
 
@@ -67,6 +77,27 @@
 
 #pragma mark - TextField delegate
 
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    textField.text = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    SEL validationSeector;
+    switch (textField.tag)
+    {
+        case 1:
+            validationSeector = @selector(checkEmail);
+            break;
+            
+        case 2:
+            validationSeector = @selector(checkPass);
+            break;
+    }
+    
+    [self validateTextField:(CTextField *)textField selector:validationSeector];
+    return NO;
+}
+
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if(textField.tag < 2)
@@ -82,19 +113,72 @@
 
 #pragma mark - Private methods
 
-- (BOOL)inputValidation
+- (BOOL)checkEmail
 {
-    if([Validator checkEmail:[textFields[EMAIL] text]])
+    return [Validator checkEmail:[textFields[EMAIL] text]];
+}
+
+- (BOOL)checkPass
+{
+    return [Validator checkPassword:[textFields[PASSWORD] text]];
+}
+
+- (BOOL)validateTextField:(CTextField *)textField selector:(SEL)selector
+{
+    BOOL valid;
+    UILabel *errorLabel;
+    
+    switch (textField.tag)
     {
-        if([Validator checkPassword:[textFields[PASSWORD] text]])
-            return YES;
+        case 1:
+            errorLabel = self.lblEmailError;
+            errorLabel.text = EMAIL_ERROR;
+            break;
+            
+        case 2:
+            errorLabel = self.lblPassError;
+            errorLabel.text = PASSWORD_ERROR;
+            break;
+    }
+    
+    if([textField text].length == 0)
+    {
+        if(loginPress)
+        {
+            [textField setState:CTFError];
+            errorLabel.hidden = NO;
+        }
         else
-            [Validator showError:PASSWORD_ERROR];
+        {
+            [textField setState:CTFNormal];
+            errorLabel.hidden = YES;
+        }
+        valid = NO;
+    }
+    else if([self performSelector:selector])
+    {
+        [textField setState:CTFOK];
+        errorLabel.hidden = YES;
+        valid = YES;
     }
     else
-        [Validator showError:EMAIL_ERROR];
+    {
+        [textField setState:CTFError];
+        errorLabel.hidden = NO;
+        valid = NO;
+    }
     
-    return NO;
+    return valid;
+}
+
+
+- (BOOL)inputValidation
+{
+    BOOL emailValid = [self validateTextField:textFields[EMAIL] selector:@selector(checkEmail)];
+    BOOL passValid = [self validateTextField:textFields[PASSWORD] selector:@selector(checkPass)];
+    
+    loginPress = NO;
+    return (emailValid && passValid);
 }
 
 - (void)createObservers
@@ -111,8 +195,11 @@
 
 - (void)signUpDidFinished:(NSNotification *)note
 {
-    [(UITextField *)textFields[EMAIL] setText:note.object];
-    [(UITextField *)textFields[PASSWORD] setText:@""];
+    [(CTextField *)textFields[EMAIL] setText:note.object];
+    [(CTextField *)textFields[PASSWORD] setText:@""];
+    
+    loginPress = NO;
+    [self inputValidation];
     [textFields[PASSWORD] becomeFirstResponder];
 }
 
@@ -120,6 +207,7 @@
 
 - (IBAction)onLogin:(id)sender
 {
+    loginPress = YES;
     if([self inputValidation])
     {
         NSString *stringURL = [NSString stringWithFormat:@"%@%@?email=%@&password=%@",
@@ -172,6 +260,11 @@
         
         UserListViewController *userListVC = [[UserListViewController alloc] init];
         [self.navigationController pushViewController:userListVC animated:YES];
+    }
+    else
+    {
+        [textFields[EMAIL] setState:CTFError];
+        [textFields[PASSWORD] setState:CTFError];
     }
 }
 

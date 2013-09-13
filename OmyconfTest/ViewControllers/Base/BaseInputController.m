@@ -9,7 +9,7 @@
 #import "BaseInputController.h"
 #import "AppDelegate.h"
 
-#define KEYBOARD_PADDING    10
+#define KEYBOARD_PADDING    25
 
 @interface BaseInputController ()
 

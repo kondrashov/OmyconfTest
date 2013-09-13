@@ -12,7 +12,12 @@
 #define DEFAULT_PROVIDER_TAG  1
 
 @interface BaseInternetController : UIViewController <InternetProviderDelegate>
+{
+    BOOL loadNow;
+}
 
 @property (strong, nonatomic) InternetProvider *internetProvider;
+
+- (void)loadData;
 
 @end

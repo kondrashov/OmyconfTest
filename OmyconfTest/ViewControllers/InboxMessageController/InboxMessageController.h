@@ -8,10 +8,18 @@
 
 #import "UserListViewController.h"
 
+@protocol InboxMessageDelegate <NSObject>
+
+- (void)inboxDownloadDidFinish:(NSArray *)dataArray;
+
+@end
+
 @interface InboxMessageController : UserListViewController
 {
     NSString *userId;
 }
+
+@property (weak, nonatomic) id delegate;
 
 - (id)initWithUserId:(NSString *)userIdentifier;
 - (void)filteringMessageByKey:(NSString *)key;

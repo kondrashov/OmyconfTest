@@ -56,6 +56,14 @@
 
 #pragma mark - Methods
 
+- (void)configureNavBar
+{
+    [super configureNavBar];
+    
+    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(onUpdate)];
+    [self.navigationItem setRightBarButtonItem:addBtn];
+}
+
 - (NSString *)getRequestURL
 {
     return USER_LIST;
@@ -90,6 +98,7 @@
 
 - (void)loadData
 {
+    [super loadData];
     NSString *stringURL = [NSString stringWithFormat:@"%@%@?email=%@&password=%@",
                            BASE_URL,
                            [self getRequestURL],
@@ -256,11 +265,20 @@
             
         case MSG_PROVIDER_TAG:
         {
+            loadNow = NO;
             [SVProgressHUD dismiss];
             [self msgProviderHandler:jsonDict];
         }
         break;
     }
+}
+
+#pragma mark - Actions
+
+- (void)onUpdate
+{
+    if(!loadNow)
+        [self loadData];
 }
 
 @end

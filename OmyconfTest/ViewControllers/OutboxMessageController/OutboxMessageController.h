@@ -8,6 +8,12 @@
 
 #import "InboxMessageController.h"
 
+@protocol OutboxMessageDelegate <NSObject>
+
+- (void)outboxDownloadDidFinish:(NSArray *)dataArray;
+
+@end
+
 @interface OutboxMessageController : InboxMessageController
 
 @end
